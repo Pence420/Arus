@@ -1,0 +1,17 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: bandarai
+      POSTGRES_USER: bandarai
+      POSTGRES_PASSWORD: bandarai
+    ports:
+      - "5432:5432"
+    volumes:
+      - bandarai_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bandarai"]
+      interval: 5s
+      retries: 10
+volumes:
+  bandarai_db:

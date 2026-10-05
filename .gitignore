@@ -2,3 +2,10 @@
 __pycache__/
 .pytest_cache/
 *.egg-info/
+node_modules/
+.next/
+.env
+.env.local
+*.tsbuildinfo
+frontend/AGENTS.md
+frontend/CLAUDE.md
